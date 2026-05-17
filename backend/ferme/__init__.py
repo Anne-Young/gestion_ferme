@@ -1,0 +1,14 @@
+# from .views.utilisateur_views import *
+# from .views.espece_views import *
+# from .views.race_views import *
+# from .views.enclos_views import *
+# from .views.animal_views import *
+# from .views.type_aliment_views import *
+# from .views.stock_aliment_views import *
+# from .views.production_views import *
+# from .views.stock_produit_views import *
+# from .views.vente_views import *
+# from .views.engrais_views import *
+# from .views.alimentation_views import *
+# from .views.sante_views import *
+# from .views.reproduction_views import *
