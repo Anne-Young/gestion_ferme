@@ -1,5 +1,12 @@
 
 from django.urls import path
+# ── Vues JWT — dans ferme/auth_views.py (fichier séparé) ─────
+from ferme.auth_views import (
+    login_view,
+    refresh_view,
+    logout_view,
+    me_view,
+)
 from ferme.views import (
     # ── Authentification ──────────────────────────
     utilisateur_login,
@@ -80,7 +87,13 @@ urlpatterns = [
 
     path('auth/login/',utilisateur_login,name='auth-login'),
 
-
+# ══════════════════════════════════════════════
+    # AUTH JWT
+    # ══════════════════════════════════════════════
+    path('auth/login/',   login_view,   name='auth-login'),
+    path('auth/refresh/', refresh_view, name='auth-refresh'),
+    path('auth/logout/',  logout_view,  name='auth-logout'),
+    path('auth/me/',      me_view,      name='auth-me'),
     # UTILISATEURS
 
     path('utilisateurs/',utilisateur_list,name='utilisateur-list'),
@@ -89,6 +102,7 @@ urlpatterns = [
     path('utilisateurs/<int:pk>/update/',utilisateur_update,name='utilisateur-update'),
     path('utilisateurs/<int:pk>/delete/',utilisateur_delete,name='utilisateur-delete'),
     path('utilisateurs/<int:pk>/toggle-actif/',utilisateur_toggle_actif,name='utilisateur-toggle'),
+
 
     # ESPÈCES
 
